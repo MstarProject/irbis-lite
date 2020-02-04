@@ -23,3 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /* news controller */
 Route::get('/news', 'NewsController@index')->name('news');
+
+//Admin
+Route::group(['namespace'=>'Admin','prefix'=>'admin'], function (){
+    Route::resource('categories', 'CategoryController')->names('admin.categories');
+});
